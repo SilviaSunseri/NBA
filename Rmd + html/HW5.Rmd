@@ -1,0 +1,75 @@
+---
+title: |
+  | HW 5
+  | Modern Data Structures
+author: "Silvia Sunseri"
+date: "03/08/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+**The link for the GitHub repository can be found [here](https://github.com/SilviaSunseri/NBA)**
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(devtools)
+library(roxygen2)
+library(tidyverse)
+library(dplyr)
+library(corrplot)
+library(purrr)
+library(magrittr)
+library(tibble)
+df = read.csv("/Users/Silvia 1/Desktop/Columbia /Classes/Data Structures/HW2/Seasons_Stats_NBA.csv")
+
+```
+
+```{r}
+
+setwd("/Users/Silvia 1/Desktop/Columbia /Classes/Data Structures/HW5")
+#create_package("NBA") 
+
+```
+
+```{r}
+df <- read.csv("/Users/Silvia 1/Desktop/Columbia /Classes/Data Structures/HW2/Seasons_Stats_NBA.csv")
+```
+
+```{r}
+#dir.create("/Users/Silvia 1/Desktop/Columbia /Classes/Data Structures/HW5/NBA/data/")
+```
+
+```{r}
+setwd("/Users/Silvia 1/Desktop/Columbia /Classes/Data Structures/HW5/NBA/data/")
+
+usethis::use_data(df, internal= FALSE, overwrite = TRUE)
+```
+
+```{r}
+setwd("/Users/Silvia 1/Desktop/Columbia /Classes/Data Structures/HW5/NBA") 
+document()
+```
+
+```{r}
+setwd("/Users/Silvia 1/Desktop/Columbia /Classes/Data Structures/HW5")
+install("NBA")
+```
+```{r}
+devtools::install_github("SilviaSunseri/NBA") 
+```
+
+#### Run each of the functions to ensure that they are working correctly in R
+
+```{r}
+more_points(1998)
+```
+
+
+```{r}
+oldest(2004)
+```
+```{r warning=FALSE}
+correlation(2015)
+```
